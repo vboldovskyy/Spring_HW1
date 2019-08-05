@@ -15,6 +15,9 @@ public class Book {
         this.rating = rating;
     }
 
+    public Book() {
+    }
+
     public int getId() {
         return id;
     }

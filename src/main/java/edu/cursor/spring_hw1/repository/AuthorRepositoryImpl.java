@@ -10,7 +10,6 @@ import java.util.List;
 
 @Repository
 public class AuthorRepositoryImpl implements AuthorRepository {
-
     private List<Author> authors= new ArrayList<>();
     @Override
     public List<Author> getAuthors() {
@@ -33,9 +32,3 @@ public class AuthorRepositoryImpl implements AuthorRepository {
     }
 }
 
-
-/*
-Arrays.asList(
-        new Author(1,"Luize", "Rivera"),
-        new Author(2,"Taras", "Shevchenko")
-        );*/

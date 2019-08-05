@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("library")
+@RequestMapping("library/author")
 public class AuthorController {
 
     private final AuthorRepository authorRepository;
@@ -18,30 +18,30 @@ public class AuthorController {
         this.authorRepository = authorRepository;
     }
 
-    @GetMapping("/author")
+    @GetMapping
     public String getAuthors() {
         return authorRepository.getAuthors().toString();
     }
 
-    @GetMapping("/author/{id}")
+    @GetMapping("{id}")
     public Author getAuthor(@PathVariable Integer id) {
         if (id.compareTo(authorRepository.getAuthors().size()) >= 0) {
-            throw new UserNotFoundException("user with id " + id + " not found");
+            throw new UserNotFoundException("author with id " + id + " not found");
         }
         return authorRepository.getAuthors().get(id);
     }
 
-    @PostMapping("/author")
+    @PostMapping
     public void createAuthor(@RequestBody Author author) {
         authorRepository.addAuthor(author);
     }
 
-    @DeleteMapping("/author/{id}")
+    @DeleteMapping("{id}")
     public void deleteAuthor(@PathVariable Integer id) {
         authorRepository.deleteAuthor(id);
     }
 
-    @PutMapping("/author/{id}")
+    @PutMapping("{id}")
     public void setAuthorBook(@PathVariable Integer id, @RequestBody Book book) {
         authorRepository.setBook(id, book);
     }
