@@ -1,26 +1,38 @@
 package edu.cursor.spring_hw1.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Author {
     private int id;
     private String name;
     private String surName;
-    private Book book;
+    private List<Book> books;
+
+    public Author() {
+        this.books = new ArrayList<>();
+    }
 
     public Author(int id, String name, String surName) {
         this.id = id;
         this.name = name;
         this.surName = surName;
+        this.books = new ArrayList<>();
     }
 
-    public Author(int id, String name, String surName, Book book) {
-        this.id = id;
-        this.name = name;
-        this.surName = surName;
-        this.book = book;
+    public void addBook(Book book){
+        books.add(book);
     }
 
-    public Author() {
+    public List<Book> getBooks() {
+        return books;
     }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
+
 
     public int getId() {
         return id;
@@ -46,21 +58,15 @@ public class Author {
         this.surName = surName;
     }
 
-    public Book getBook() {
-        return book;
-    }
 
-    public void setBook(Book book) {
-        this.book = book;
-    }
 
     @Override
     public String toString() {
-        return "Author{" +
+        return "\nAuthor{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", surName='" + surName + '\'' +
-                ", book='" + book + '\'' +
-                "}\n";
+                ", book='" + books + '\'' +
+                "}";
     }
 }

@@ -1,7 +1,7 @@
 package edu.cursor.spring_hw1.conroller;
 
 import edu.cursor.spring_hw1.entities.Book;
-import edu.cursor.spring_hw1.exceptions.UserNotFoundException;
+import edu.cursor.spring_hw1.exceptions.BookNotFoundException;
 import edu.cursor.spring_hw1.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -34,7 +34,7 @@ public class BookController {
     @GetMapping("{id}")
     public Book getBook(@PathVariable Integer id) {
         if (id.compareTo(bookRepository.getBooks().size()) >= 0) {
-            throw new UserNotFoundException("book with id " + id + " not found");
+            throw new BookNotFoundException("book with id " + id + " not found");
         }
         return bookRepository.getBooks().get(id);
     }

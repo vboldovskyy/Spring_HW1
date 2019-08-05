@@ -27,8 +27,8 @@ public class AuthorRepositoryImpl implements AuthorRepository {
     }
 
     @Override
-    public void setBook(Integer idOfAuthor, Book book) {
-        authors.get(idOfAuthor).setBook(book);
+    public void addBook(Integer idOfAuthor, Book book) {
+        authors.get(idOfAuthor).addBook(book);
     }
 }
 
