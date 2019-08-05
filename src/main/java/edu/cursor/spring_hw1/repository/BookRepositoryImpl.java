@@ -4,7 +4,6 @@ import edu.cursor.spring_hw1.entities.Book;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Repository
@@ -23,7 +22,7 @@ public class BookRepositoryImpl implements BookRepository {
 
     @Override
     public void deleteBook(int idOfBook) {
-        books.removeIf(book -> book.getId()==idOfBook);
+        books.removeIf(book -> book.getId() == idOfBook);
     }
 
 }

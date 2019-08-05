@@ -4,7 +4,6 @@ import edu.cursor.spring_hw1.entities.Author;
 import edu.cursor.spring_hw1.entities.Book;
 
 import java.util.List;
-import java.util.Map;
 
 public interface AuthorRepository {
     List<Author> getAuthors();

@@ -1,6 +1,5 @@
 package edu.cursor.spring_hw1.repository;
 
-import edu.cursor.spring_hw1.entities.Author;
 import edu.cursor.spring_hw1.entities.Book;
 
 import java.util.List;

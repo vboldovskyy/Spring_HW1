@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("library/book")
 public class BookController {
-
     private final BookRepository bookRepository;
 
     @Autowired
@@ -26,7 +25,7 @@ public class BookController {
     }
 
     @GetMapping("sortByGenre/{genre}")
-    public List<Book> getGenreSortedBooks(@PathVariable String genre){
+    public List<Book> getGenreSortedBooks(@PathVariable String genre) {
         return bookRepository.getBooks().stream()
                 .filter(book -> book.getGenre().equals(genre))
                 .collect(Collectors.toList());
