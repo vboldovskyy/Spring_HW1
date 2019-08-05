@@ -9,8 +9,8 @@ import java.util.List;
 @Repository
 public class BookRepositoryImpl implements BookRepository {
     private List<Book> books = Arrays.asList(
-            new Book(1,"Legioner","Drama","interesting book",4.9),
-            new Book(2,"Kobzar","Drama","collection of verses",5.0)
+            new Book(0,"Legioner","Drama","interesting book",4.9),
+            new Book(1,"Kobzar","Drama","collection of verses",5.0)
     );
 
     @Override

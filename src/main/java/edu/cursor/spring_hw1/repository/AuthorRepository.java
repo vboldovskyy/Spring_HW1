@@ -12,4 +12,6 @@ public interface AuthorRepository {
     void addAuthor(Author author);
 
     void deleteAuthor(int idOfAuthor);
+
+    void setBook(Integer idOfAuthor, Book book);
 }

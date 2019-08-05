@@ -3,14 +3,14 @@ package edu.cursor.spring_hw1.entities;
 public class Book {
     private int id;
     private String title;
-    private String ganre;
+    private String genre;
     private String description;
     private double rating;
 
-    public Book(int id, String title, String ganre, String description, double rating) {
+    public Book(int id, String title, String genre, String description, double rating) {
         this.id = id;
         this.title = title;
-        this.ganre = ganre;
+        this.genre = genre;
         this.description = description;
         this.rating = rating;
     }
@@ -31,12 +31,12 @@ public class Book {
         this.title = title;
     }
 
-    public String getGanre() {
-        return ganre;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGanre(String ganre) {
-        this.ganre = ganre;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
     public String getDescription() {
@@ -60,7 +60,7 @@ public class Book {
         return "Book{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
-                ", ganre='" + ganre + '\'' +
+                ", genre='" + genre + '\'' +
                 ", description='" + description + '\'' +
                 ", rating=" + rating +
                 "}\n";

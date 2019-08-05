@@ -1,9 +1,9 @@
 package edu.cursor.spring_hw1.conroller;
 
 import edu.cursor.spring_hw1.entities.Author;
+import edu.cursor.spring_hw1.entities.Book;
 import edu.cursor.spring_hw1.exceptions.UserNotFoundException;
 import edu.cursor.spring_hw1.repository.AuthorRepository;
-import edu.cursor.spring_hw1.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,14 +32,17 @@ public class AuthorController {
     }
 
     @PostMapping("/author")
-    public void createAuthor(@RequestBody Author author){
+    public void createAuthor(@RequestBody Author author) {
         authorRepository.addAuthor(author);
     }
 
     @DeleteMapping("/author/{id}")
-    public void deleteAuthor(@PathVariable Integer id){
+    public void deleteAuthor(@PathVariable Integer id) {
         authorRepository.deleteAuthor(id);
     }
 
-
+    @PutMapping("/author/{id}")
+    public void setAuthorBook(@PathVariable Integer id, @RequestBody Book book) {
+        authorRepository.setBook(id, book);
+    }
 }

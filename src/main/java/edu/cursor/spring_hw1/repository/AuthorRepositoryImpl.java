@@ -1,6 +1,7 @@
 package edu.cursor.spring_hw1.repository;
 
 import edu.cursor.spring_hw1.entities.Author;
+import edu.cursor.spring_hw1.entities.Book;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -24,6 +25,11 @@ public class AuthorRepositoryImpl implements AuthorRepository {
     @Override
     public void deleteAuthor(int idOfAuthor) {
         authors.removeIf(author -> author.getId()==idOfAuthor);
+    }
+
+    @Override
+    public void setBook(Integer idOfAuthor, Book book) {
+        authors.get(idOfAuthor).setBook(book);
     }
 }
 
