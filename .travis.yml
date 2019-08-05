@@ -1,6 +1,6 @@
 language: java
 
-dist: trusty
+dist: bionic
 
 # don't need more than a few levels for our builds
 git:
@@ -14,9 +14,12 @@ cache:
 before_install:
   - unset _JAVA_OPTIONS
   - rm ~/.m2/settings.xml
+  - sudo apt update
+  - sudo apt upgrade
   - export MAVEN_SKIP_RC=true
   - export MAVEN_OPTS="-Xmn64M -Xmx512M -XX:CompressedClassSpaceSize=96M"
   - export JAVA_OPTS="$JAVA_OPTS -XX:CompressedClassSpaceSize=96M"
+  - sudo apt install jruby
 
 before_script:
   - unset GEM_PATH GEM_HOME IRBRC JRUBY_OPTS
