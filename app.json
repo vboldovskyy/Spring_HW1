@@ -1,0 +1,37 @@
+{
+  "addons": [
+    "cloudboost"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/java"
+    }
+  ],
+  "description": "",
+  "env": {
+    "CLOUDBOOST_APP_ID": {
+      "required": true
+    },
+    "CLOUDBOOST_CLIENT_KEY": {
+      "required": true
+    },
+    "CLOUDBOOST_MASTER_KEY": {
+      "required": true
+    },
+    "CLOUDBOOST_PORTAL": {
+      "required": true
+    },
+    "CLOUDBOOST_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "Spring_HW1",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
